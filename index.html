@@ -1,0 +1,186 @@
+<html>
+<meta http-equiv="content-type" Content="text/html; charset=utf-8">
+<title>Currently in the 'pu' branch</title>
+<style type="text/css" media="all">
+    body {
+      width: 600px;
+    }
+</style>
+<body>
+<h1>Currently in the 'pu' branch</h1>
+<p>The comment about each topic branch is taken from the latest
+<em>What's cooking in erlang/otp</em> email and may no longer apply if
+the topic branch has been updated.
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/88d0bc05afefef9c2df8d00468419094d9d06a3d">rj/add-space-spec_proc-doc</a> (otp):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/ab8334566f82c8330ab9027e6faadb033ca7d3cb">Add missing white space in Special Process doc</a></li>
+</ul>
+<p><i>New topic branch</i>
+<p>
+</li>
+<li><a href="https://github.com/erlang/otp/commit/0a518a4895537b77be835863d17e6490aa251a88">ks/compile_info-fix</a> (compiler, erl_docgen, hipe):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/1fac6e8abd1f072beaabee7f5229a869826fbd56">Fix discrepancy in compile_info</a></li>
+<li><a href="https://github.com/erlang/otp/commit/b6a3f81b1ac8ad83757105efd967a4665bf3a178">[erl_docgen] Optimize generation of HTML</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/6270f091ec815809251100e0392d84544c10667e">rj/fix-gen_udp_tcp-leak</a> (kernel):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/944a57a11a79c5a9bb2f554c921e2e00e7d56c91">Fix port leaking after controlling_process(Port, self())</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/6d11c6a1dd9808fba77d21a8b92f72ea9df8e8f9">pan/win32_testbuild</a> (otp):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/4799b48bf81fd3c43e2a28f85cb69f8890ddfdf5">Set PATH correctly when building tests on win32</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/097e636d122e7685b16599eda9a4b2407db14b51">dc/dch-fix-win32-escript</a> (erts):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/a50b2858ab9e0dd7cc2898696a5ab119a6b73a14">add escript win32 alternative invocation (thanks Pierre Rouleau)</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/d2b98be6c068e61bd8facbb2a8abbb079790e84e">jc/omit-undefined-start_phases</a> (reltool):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/700e7ee884e3ae19a43a05e8a24f90ab703e6890">Avoid creating an undefined start_phases entry when generating a release</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/7091fce7e0b23f9d1ffe98e42ece4fa6b7c3d492">mp/fix-assembler-comment-char-for-hipe-ppc</a> (erts):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/17ab3d9f6fa7b71a12b8cf652769ff019c18513d">Fix assembler comment character for hipe on ppc</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/905469898f3cf360575d3de5c421fdddc641c160">tp/supervisor-pass-on-errors</a> (stdlib):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/c546f891d649a484352c0096da97f7ffb294fe48">Have supervisor send errors up the chain</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/bf52bcddafc73bcf712d9f4a8d8d64ff3f175bc5">ta/docs15</a> (common_test, erts, otp):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/e3c347c060f100ac1832226e8401077155a0fe99">Fix typos in ct getting_started_chapter.xml</a></li>
+<li><a href="https://github.com/erlang/otp/commit/4136021f56c32bfb09afb94ad298007fb8fbe46d">Fix typos in driver.xml and erl_driver.xml</a></li>
+<li><a href="https://github.com/erlang/otp/commit/13924625123e5675d72278d78dd9b1580ec34257">Fix typos in INSTALL-WIN32.md</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/96d5977d875ef5ceda503161d7e66e160b5f7f71">ph/fix_enfile</a> (erts, kernel):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/949ee23d72e4412fed3059c04e395f995388a5fb">Fix returned error from gen_tcp:accept/1,2 when running out of ports</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/e4c8250775ed96f91ca1d128348213cceca6e8c7">ts/no_hipe_ceach</a> (hipe):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/27d83b08b4f73d3fb4c49d44c2ca8f1f3d1b25d5">Remove hipe_ceach from hipe.app.src to fix reltool-generated release startup</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/1a647e63664500390a55d7a20d7ebe27496c9225">ud/fix-return-do_get_disc_copy2</a> (mnesia):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/a85fe55b81f76ed63ebc6d9c6b2b7191fdec810e">Fixes value returned by mnesia_loader:do_get_disc_copy2/4</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/6c1bf950ccdeeb016ddacaa109be6f57c660fd46">tab/fix-sctp-multihoming-IPv6</a> (erts, kernel):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/05984ac5997ba0508d85e45379d90f1a9a8d5e98">Fix SCTP multihoming for IPv6</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/dcb8a95b60be492c6080a404d1315e9c53d17143">mz/odbc-support-param_query</a> (odbc):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/c6e01fe15d02dc704e5a9e77b59d2ee2db235976">Add support for NULL value in odbc:param_query</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/1b5e85bf0565d5ff597a2fc89b1c35a449c66fe6">cv/update-localtime-configuration</a> (erts):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/c14ba7b6c6ec9983386453f3e83f135f01467dfd">erts: Fix localtime BIFs does not update system timezone configuration</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/0fb61d36d8e422d4ab14c393ae9eb5be380606e1">bm/ssl_npn</a> (ssl):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/4d2ba8bfd67c5ffca9ac2e5dcd29cebf04f12d16">Update SSL docs for SSL Next Protocol Support</a></li>
+<li><a href="https://github.com/erlang/otp/commit/1173de0aedee2316fa48436ecda1c8885bcdec97">Support for SSL Next Protocol Negotiation * http://technotes.googlecode.com/git/nextprotoneg.html</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/d6b6c3e3a37debe427818a9511b8cd1e0104e45b">mh/eunit_surefire-fixture-errors</a> (eunit):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/7425075250aaaa5418ebca89c61a7fc7c683c616">Include fixture setup and cleanup errors in Eunit Surefire report</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/9e7ed1aae3366eb8ca29f810c233467993c18c75">uw/extending_gen</a> (stdlib):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/b0426732cc19598f0c0c310b1e79918252495259">Add plugin support for alternative name lookup</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/dca12b7b502be202fafbfa1b77d623c99fc4f9b3">wc/fix-eunit-print-stacktrace</a> (eunit):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/73b94a990bb91fd263dace4ccbaef6ff727a9637">fix eunit to print stacktrace correctly if test cases throw any exception</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/7ece88f74f0842b3b501456f36235c15857e62e1">hw/asn1rt_check-transform</a> (asn1):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/6a69602985c9da9fc105cf4ce1cb434ae5f00f07">asn1rt_check: Fix transform_to_EXTERNAL1990 for binary input</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/12ec9ccc63a3ba44fbdda8c2ec8004297ea7030c">mh/run_erl-exit-status</a> (erts):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/bd15706aa58131b5500229138da2b9dca93a3e95">run_erl.c: propagate exit status from child process</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/0b028eaa740e8e78f0453294beb7763aebcfc2a7">ta/prim_archive-reloading-mfa</a> (erts, kernel, stdlib):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/3d899964e1276b46c76bb77170bec4897f84fd2d">escript_SUITE: remove gratuitous space</a></li>
+<li><a href="https://github.com/erlang/otp/commit/4ac74ce82328a26086902692a11fa9e9e75cd239">[erts,kernel,stdlib] fix escript/primary archive reloading</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/c6d5fa5dec194c6bc59090f47b59711c4e01db64">mh/create_cookie_error_msg</a> (kernel):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/9319587de60b67f3de689de60b473136fd45cadd">Specify file name and error on create_cookie failure</a></li>
+</ul>
+<p></li>
+<li><a href="https://github.com/erlang/otp/commit/20187e01c3b5acb38926579a52298e670042b9f2">bw/efile_exists</a> (erts):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/27599052025bf84b57119175511c4592f74e4d05">prim_file:exists/{1,2} which is lightweight file existence check</a></li>
+</ul>
+<p>Action expected from: Topic author
+
+<p>
+
+</li>
+<li><a href="https://github.com/erlang/otp/commit/0bce21d46921f891a0eb48c4fc2d25ad86dacad5">bg/temp-hipe-fixes</a> (compiler, kernel):
+
+<ul>
+<li><a href="https://github.com/erlang/otp/commit/497eae80e66aa73a195202e7386f08b5ded5b304">Avoid crash by skipping compilation_SUITE:on_load/1</a></li>
+<li><a href="https://github.com/erlang/otp/commit/5a5fffebb7bf0ec143e9a622a0d52302ca20b562">Inline less aggressively for native-code compilation</a></li>
+<li><a href="https://github.com/erlang/otp/commit/cac199174e500aac2d68f971823cd437658ea10f">seq_trace_SUITE: Don't native-compile</a></li>
+<li><a href="https://github.com/erlang/otp/commit/7c3d056494b17a518738424c38cc6c4bfea88561">Disable native code if on_load is used</a></li>
+<li><a href="https://github.com/erlang/otp/commit/8c513a447a2ee9cc1a19f79f25875d7816f882f3">andor_SUITE: Don't native-compile</a></li>
+</ul>
+<p>This branch contains temporary workarounds to avoid failing test
+cases and is never intended to graduate.
+
+<p>
+</li>
+</ul>
+</body>
+</html>
