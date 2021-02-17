@@ -42,6 +42,10 @@ include $(TARGET)/eidefs.mk
 
 include $(ERL_TOP)/make/output.mk
 
+prefix          = @prefix@
+exec_prefix     = @exec_prefix@
+libdir          = @libdir@
+
 EBINDIR=../ebin
 
 APP_FILE= erl_interface.app
@@ -668,6 +672,9 @@ EXTRA = \
 	README.internal \
 	$(TARGET)/eidefs.mk
 
+PKG-CONFIG = \
+	$(TARGET)/erl_ei.pc
+
 release: opt
 	$(INSTALL_DIR) "$(RELSYSDIR)/include"
 	$(INSTALL_DIR) "$(RELSYSDIR)/lib"
@@ -683,6 +690,8 @@ release: opt
 	$(INSTALL_DIR) "$(RELSYSDIR)/src/prog"
 	$(INSTALL_DIR) "$(RELEASE_PATH)/usr/include"
 	$(INSTALL_DIR) "$(RELEASE_PATH)/usr/lib"
+	$(INSTALL_DIR) "$(DESTDIR)/$(libdir)/pkgconfig"
+	$(INSTALL_DATA) $(PKG-CONFIG) "$(DESTDIR)/$(libdir)/pkgconfig"
 	$(INSTALL_DATA) $(APP_TARGET)  "$(RELSYSDIR)/ebin/$(APP_FILE)"
 	$(INSTALL_DATA) $(APPUP_TARGET)  "$(RELSYSDIR)/ebin/$(APPUP_FILE)"
 	$(INSTALL_DATA) $(HEADERS)     "$(RELSYSDIR)/include"
