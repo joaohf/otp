@@ -1687,45 +1687,50 @@ AC_SUBST(SYSTEMD_DAEMON_LIBS)
 dnl ----------------------------------------------------------------------
 dnl Check the availability for libdlpi
 dnl ----------------------------------------------------------------------
-AC_CHECK_LIB(dlpi, dlpi_open)
-AS_IF([test x"$ac_cv_lib_dlpi_dlpi_open" = x"no"],
-  [
-   unset -v ac_cv_lib_dlpi_dlpi_open
-   dnl Try again now with -L/lib (or ditto 64) as argument to linker since
-   dnl gcc makes /usr/ccs/bin/ld ignore the crle configured linker default paths
-   dnl typically causing dlpi not being found on Solaris et.al
-   save_ldflags="$LDFLAGS"
-   try_dlpi_lib=/lib
-   if test x"$ac_cv_sizeof_void_p" = x"8"; then
-      if test -d /lib64; then
-	 try_dlpi_lib=/lib64
-      elif test -d /lib/64; then
-	 try_dlpi_lib=/lib/64
-      fi
-   fi
-   if test ! -f "$try_dlpi_lib/libdlpi.so" && \
-      test -f "$try_dlpi_lib/libdlpi.so.1"
-   then
-      dnl It looks like there is a missing symlink
-      dnl - let's be helpful and notify the user
-      dnl NOTE this help is far from perfect e.g if there would be no
-      dnl *.so.1 but a *.so.1.123 or *.so.2 this will be no help
-      AC_MSG_ERROR(
-	[Your OS installation is missing a symbolic link.
-	Maybe it lacks some development package(s)...
-	It can anyhow be fixed with the following command:
-	# ln -s libdlpi.so.1 $try_dlpi_lib/libdlpi.so
-	])
-   fi
-   LDFLAGS="-L$try_dlpi_lib -R$try_dlpi_lib $LDFLAGS"
-   unset -v try_dlpi_lib
-   AC_MSG_NOTICE([Extending the search to include /lib])
-   AC_CHECK_LIB(dlpi, dlpi_open)
-   if test x"$ac_cv_lib_dlpi_dlpi_open" = x"no"; then
-      LDFLAGS="$save_ldflags"
-   fi
-   unset -v save_ldflags
- ])
+AS_CASE([$host_os],
+        [solaris*],
+	[
+		AC_CHECK_LIB(dlpi, dlpi_open)
+		AS_IF([test x"$ac_cv_lib_dlpi_dlpi_open" = x"no"],
+		[
+		unset -v ac_cv_lib_dlpi_dlpi_open
+		dnl Try again now with -L/lib (or ditto 64) as argument to linker since
+		dnl gcc makes /usr/ccs/bin/ld ignore the crle configured linker default paths
+		dnl typically causing dlpi not being found on Solaris et.al
+		save_ldflags="$LDFLAGS"
+		try_dlpi_lib=/lib
+		if test x"$ac_cv_sizeof_void_p" = x"8"; then
+			if test -d /lib64; then
+			try_dlpi_lib=/lib64
+			elif test -d /lib/64; then
+			try_dlpi_lib=/lib/64
+			fi
+		fi
+		if test ! -f "$try_dlpi_lib/libdlpi.so" && \
+			test -f "$try_dlpi_lib/libdlpi.so.1"
+		then
+			dnl It looks like there is a missing symlink
+			dnl - let's be helpful and notify the user
+			dnl NOTE this help is far from perfect e.g if there would be no
+			dnl *.so.1 but a *.so.1.123 or *.so.2 this will be no help
+			AC_MSG_ERROR(
+			[Your OS installation is missing a symbolic link.
+			Maybe it lacks some development package(s)...
+			It can anyhow be fixed with the following command:
+			# ln -s libdlpi.so.1 $try_dlpi_lib/libdlpi.so
+			])
+		fi
+		LDFLAGS="-L$try_dlpi_lib -R$try_dlpi_lib $LDFLAGS"
+		unset -v try_dlpi_lib
+		AC_MSG_NOTICE([Extending the search to include /lib])
+		AC_CHECK_LIB(dlpi, dlpi_open)
+		if test x"$ac_cv_lib_dlpi_dlpi_open" = x"no"; then
+			LDFLAGS="$save_ldflags"
+		fi
+		unset -v save_ldflags
+		])
+	],
+	[])
 
 AC_CHECK_HEADER(sys/resource.h,
 	[AC_DEFINE(HAVE_SYS_RESOURCE_H, 1,
